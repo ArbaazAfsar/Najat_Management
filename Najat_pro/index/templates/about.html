@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block active %}
+<div class="navbar-nav ms-auto py-0">
+    <a href="{% url 'home' %}" class="nav-item nav-link ">Home</a>
+    <a href="{% url 'about' %}" class="nav-item nav-link active">About</a>
+    <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
+    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+            {% endblock active %}
+
+{% block heading %}
+   <!-- Hero Start -->
+   <div class="container-fluid bg-primary py-5 hero-header mb-5">
+    <div class="row py-3">
+        <div class="col-12 text-center">
+            <h1 class="display-3 text-white animated zoomIn">About Us</h1>
+            <h2 class=" text-white ">Empowering Healthcare Success</h2>
+            
+            <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="" class="h5 text-white">About</a>
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+{% endblock heading %}
+
+{% block content %}
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title mb-4">
+                        <h5 class="position-relative d-inline-block text-primary text-uppercase">Authentic Healthcare Partners</h5>
+                        <br>
+                        <br>
+                        <h1 class="display-5 mb-0">Our Company Story</h1>
+                    </div>
+                    {% comment %} <h4 class="text-body fst-italic mb-4">Diam dolor diam ipsum sit. Clita erat ipsum et lorem stet no lorem sit clita duo justo magna dolore</h4> {% endcomment %}
+                    <p class="mb-4 fst-italic">NAJAT Management llc is a top-tier healthcare consultancy firm in the UAE, bringing cutting-edge solutions and expert guidance to healthcare entities and professionals. 
+                        <br>
+                        <br>
+
+                        With a vision to enhance healthcare services in the region, NAJAT Management LLC was founded by a team of industry experts with a passion for improving patient care.</p>
+                    <div class="row g-3">
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.3s">
+                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Award Winning</h5>
+                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Professional Staff</h5>
+                        </div>
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.6s">
+                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>24/7 Opened</h5>
+                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Fair Prices</h5>
+                        </div>
+                    </div>
+                    <a href="appointment.html" class="btn btn-primary py-3 px-5 mt-4 wow zoomIn" data-wow-delay="0.6s">Make Appointment</a>
+                </div>
+                <div class="col-lg-5" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{% static 'img/about3.jpg' %}" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+        <!-- Pricing Start -->
+        <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-5">
+                        <div class="section-title mb-4">
+                            <h5 class="position-relative d-inline-block text-primary text-uppercase">Core Values</h5>
+                            <h1 class="display-5 mb-0">Our Commitment to Excellence</h1>
+                        </div>
+                        
+                        <h5 class="text-uppercase text-primary wow fadeInUp" data-wow-delay="0.3s">Contact us for more details</h5>
+                        <h1 class="wow fadeInUp" data-wow-delay="0.6s">+971505059701</h1>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="owl-carousel price-carousel wow zoomIn" data-wow-delay="0.9s">
+                            <div class="price-item pb-4">
+                                {% comment %} <div class="position-relative">
+                                    <img class="img-fluid rounded-top" src="img/price-1.jpg" alt="">
+                                    <div class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle"
+                                        style="z-index: 2;">
+                                        <h2 class="text-primary m-0">$35</h2>
+                                    </div>
+                                </div> {% endcomment %}
+                                <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
+                                    <h4>Integrity</h4>
+                                    <hr class="text-primary w-50 mx-auto mt-0">
+                                    <div class="d-flex justify-content-between mb-3"><span>We uphold the highest ethical standards in all our interactions and transactions.</span></div>
+                                    
+                                    
+                                    {% comment %} <a href="appointment.html"
+                                        class="btn btn-primary py-2 px-4 position-absolute top-100 start-50 translate-middle">Appointment</a> {% endcomment %}
+                                </div>
+                            </div>
+                            <div class="price-item pb-4">
+                                {% comment %} <div class="position-relative">
+                                    <img class="img-fluid rounded-top" src="img/price-2.jpg" alt="">
+                                    <div class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle"
+                                        style="z-index: 2;">
+                                        <h2 class="text-primary m-0">$49</h2>
+                                    </div>
+                                </div> {% endcomment %}
+                                <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
+                                    <h4>Innovation</h4>
+                                    <hr class="text-primary w-50 mx-auto mt-0">
+                                    <div class="d-flex justify-content-between mb-3"><span>We constantly seek new ways to improve healthcare operations and outcomes through innovative solutions.</span></div>
+                                    
+                                    
+                                    {% comment %} <a href="appointment.html"
+                                        class="btn btn-primary py-2 px-4 position-absolute top-100 start-50 translate-middle">Appointment</a> {% endcomment %}
+                                </div>
+                            </div>
+                            <div class="price-item pb-4">
+                                {% comment %} <div class="position-relative">
+                                    <img class="img-fluid rounded-top" src="img/price-3.jpg" alt="">
+                                    <div class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle"
+                                        style="z-index: 2;">
+                                        <h2 class="text-primary m-0">$99</h2>
+                                    </div>
+                                </div> {% endcomment %}
+                                <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
+                                    <h4>Collaboration</h4>
+                                    <hr class="text-primary w-50 mx-auto mt-0">
+                                    <div class="d-flex justify-content-between mb-3"><span>We believe in working closely with our clients and partners to achieve mutual success and create lasting impact</span></div>
+                                    
+                                    
+                                    {% comment %} <a href="appointment.html"
+                                        class="btn btn-primary py-2 px-4 position-absolute top-100 start-50 translate-middle">Appointment</a> {% endcomment %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pricing End -->
+
+
+
+    {% comment %} <div class="wp-block-uagb-container uagb-block-edae5b83 alignfull uagb-is-root-container"><div class="uagb-container-inner-blocks-wrap">
+        <div class="wp-block-uagb-advanced-heading uagb-block-64726181"><div class="uagb-heading-text">Core Values</div></div>
+        
+        
+        
+        <div class="wp-block-uagb-advanced-heading uagb-block-92588f0c"><h2 class="uagb-heading-text">Our Commitment to Excellence</h2></div>
+        
+        
+        
+        <div class="wp-block-uagb-image uagb-block-37f6c2f8 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img loading="lazy" decoding="async" srcset="https://najathealth.ae/wp-content/uploads/2024/03/pexels-photo-287237.jpeg ,https://najathealth.ae/wp-content/uploads/2024/03/pexels-photo-287237.jpeg 780w" sizes="(max-width: 480px) 150px" src="https://najathealth.ae/wp-content/uploads/2024/03/pexels-photo-287237.jpeg" alt="" class="uag-image-1381" width="1200" height="430" title=""></figure></div>
+        
+        
+        
+        <div class="wp-block-uagb-container uagb-block-0f0fe2b0">
+        <div class="wp-block-uagb-advanced-heading uagb-block-a7766e3a"><h3 class="uagb-heading-text">Integrity</h3><p class="uagb-desc-text">We uphold the highest ethical standards in all our interactions and transactions.</p></div>
+        
+        
+        
+        <div class="wp-block-uagb-advanced-heading uagb-block-b78816fa"><h3 class="uagb-heading-text">Innovation</h3><p class="uagb-desc-text">We constantly seek new ways to improve healthcare operations and outcomes through innovative solutions.</p></div>
+        
+        
+        
+        <div class="wp-block-uagb-advanced-heading uagb-block-a5c64964"><h3 class="uagb-heading-text">Collaboration</h3><p class="uagb-desc-text">We believe in working closely with our clients and partners to achieve mutual success and create lasting impact.</p></div>
+        </div>
+        </div></div> {% endcomment %}
+
+
+        <!-- Newsletter Start -->
+        <div class="container-fluid position-relative pt-5 wow fadeInUp" data-wow-delay="0.1s" style="z-index: 1;">
+            <div class="container">
+                <div class="bg-primary p-5">
+                    <form class="mx-auto" style="max-width: 600px;">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                            <button class="btn btn-dark px-4">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter End -->
+
+
+
+
+
+{% endblock content %}

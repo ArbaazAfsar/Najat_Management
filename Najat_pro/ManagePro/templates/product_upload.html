@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block active %}
+<div class="navbar-nav ms-auto py-0">
+    <a href="{% url 'home' %}" class="nav-item nav-link ">Home</a>
+    <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+    <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
+    <a href="{% url 'contact' %}" class="nav-item nav-link ">Contact</a>
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Products</a>
+    </div>
+</div>
+{% endblock active %}
+
+{% block heading %}
+<!-- Hero Start -->
+<div class="container-fluid bg-primary py-5 hero-header mb-5">
+    <div class="row py-3">
+        <div class="col-12 text-center">
+            <h1 class="display-3 text-white animated zoomIn">Upload Product</h1>
+            <h2 class="text-white">Get in Touch Today with the Best Healthcare Management in UAE</h2>
+            <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="#" class="h5 text-white">Contact</a>
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+{% endblock heading %}
+
+{% block content %}
+
+<style>
+    /* static/css/custom_styles.css */
+
+.card {
+    background-color: #ffffff;  /* White card background */
+    border-radius: 15px;        /* Rounded corners */
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;  /* Change font style */
+    font-weight: bold;
+    color: #007bff;                /* Primary color for heading */
+}
+
+h4.text-success {
+    color: #28a745;               /* Green color for the product images heading */
+}
+
+.btn-success {
+    background-color: #28a745;  /* Green button background */
+    border-color: #28a745;      /* Matching border */
+}
+
+.btn-success:hover {
+    background-color: #218838;  /* Darker green on hover */
+    border-color: #1e7e34;      /* Matching border on hover */
+}
+
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2 class="text-center mb-4 text-primary">Upload Product</h2>
+            <div class="card p-4 border-0 shadow">
+                <!-- Product upload form -->
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <!-- Product Information Form -->
+                    <div class="form-group mb-3">
+                        <label for="name" class="form-label">Product Name</label>
+                        {{ product_form.name|add_class:"form-control" }}
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        {{ product_form.description|add_class:"form-control" }}
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        {{ product_form.category|add_class:"form-control" }}
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label for="model_number" class="form-label">Model Number</label>
+                        {{ product_form.model_number|add_class:"form-control" }}
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label for="brochure" class="form-label">Brochure (PDF)</label>
+                        {{ product_form.brochure|add_class:"form-control-file" }}
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label for="specifications" class="form-label">Specifications</label>
+                        {{ product_form.specifications|add_class:"form-control" }}
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label for="release_date" class="form-label">Release Date</label>
+                        {{ product_form.release_date|add_class:"form-control" }}
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        {{ product_form.price|add_class:"form-control" }}
+                    </div>
+
+                    <!-- Product Images -->
+                    <h4 class="mt-4 text-success">Product Images</h4>
+                    {{ image_formset.management_form }}  <!-- Management form for formset -->
+                    {% for form in image_formset %}
+                        <div class="form-group mb-3 d-flex align-items-center">
+                            <div class="me-3">
+                                <label for="image_{{ forloop.counter }}" class="form-label">Product Image {{ forloop.counter }}</label>
+                                {{ form.image|add_class:"form-control-file" }}
+                            </div>
+                            <div>
+                                <label for="alt_text_{{ forloop.counter }}" class="form-label">Alt Text</label>
+                                {{ form.alt_text|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <hr>
+                    {% endfor %}
+                    <br>
+                    <button type="submit" class="btn btn-success btn-lg w-100">Upload Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock content %}
+

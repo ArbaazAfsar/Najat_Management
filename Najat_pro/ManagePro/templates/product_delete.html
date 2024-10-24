@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block active %}
+<div class="navbar-nav ms-auto py-0">
+    <a href="{% url 'home' %}" class="nav-item nav-link ">Home</a>
+    <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+    <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
+    <a href="{% url 'contact' %}" class="nav-item nav-link ">Contact</a>
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Products</a>
+{% endblock active %}
+
+
+
+
+
+{% block heading %}
+   <!-- Hero Start -->
+   <div class="container-fluid bg-primary py-5 hero-header mb-5">
+    <div class="row py-3">
+        <div class="col-12 text-center">
+            <h1 class="display-3 text-white animated zoomIn">Delete product</h1>
+            <h2 class="text-white">Get in Touch Today with the Best Healthcare Management in UAE</h2>
+            <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="" class="h5 text-white">Contact</a>
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+{% endblock heading %}
+
+{% block content %}
+
+<h2>Are you sure you want to delete {{ product.name }}?</h2>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete Product</button>
+    <a href="{% url 'all_products' %}" class="btn btn-secondary">Cancel</a>
+</form>
+
+{% endblock content %}

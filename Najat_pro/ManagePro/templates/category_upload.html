@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block active %}
+<div class="navbar-nav ms-auto py-0">
+    <a href="{% url 'home' %}" class="nav-item nav-link ">Home</a>
+    <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+    <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
+    <a href="{% url 'contact' %}" class="nav-item nav-link ">Contact</a>
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Products</a>
+{% endblock active %}
+
+
+
+
+
+{% block heading %}
+   <!-- Hero Start -->
+   <div class="container-fluid bg-primary py-5 hero-header mb-5">
+    <div class="row py-3">
+        <div class="col-12 text-center">
+            <h1 class="display-3 text-white animated zoomIn">Upload Category</h1>
+            <h2 class="text-white">Get in Touch Today with the Best Healthcare Management in UAE</h2>
+            <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="" class="h5 text-white">Contact</a>
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+{% endblock heading %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2 class="text-center mb-4 text-primary">Upload Category</h2>
+            <div class="card p-4 border-0 shadow">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <!-- Category Information Form -->
+                    <div class="form-group mb-3">
+                        <label for="name" class="form-label">Category Name</label>
+                        {{ form.name|add_class:"form-control" }}
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        {{ form.description|add_class:"form-control" }}
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="image" class="form-label">Category Image</label>
+                        {{ form.image|add_class:"form-control-file" }}
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-lg w-100">Upload Category</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock content %}

@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block active %}
+<div class="navbar-nav ms-auto py-0">
+    <a href="{% url 'home' %}" class="nav-item nav-link ">Home</a>
+    <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+    <a href="{% url 'service' %}" class="nav-item nav-link active">Service</a>
+    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+{% endblock active %}
+
+
+
+{% block heading %}
+  <!-- Hero Start -->
+  <div class="container-fluid bg-primary py-5 hero-header mb-5">
+    <div class="row py-3">
+      <div class="col-12 text-center">
+        <h1 class="display-3 text-white animated zoomIn">Services</h1>
+        <h2 class="text-white">Comprehensive Healthcare Solutions</h2>
+        <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+        <i class="far fa-circle text-white px-2"></i>
+        <a href="" class="h5 text-white">Services</a>
+      </div>
+    </div>
+  </div>
+  <!-- Hero End -->
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .service-item {
+        transition: transform 0.3s ease-in-out;
+    }
+    .service-item:hover {
+        transform: scale(1.05);
+    }
+    .service-item img {
+        height: 200px; /* Ensures consistent image height */
+        object-fit: cover; /* Adjust the image aspect ratio */
+    }
+    .section-title h5 {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .section-title h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    ul {
+        padding-left: 0;
+        list-style: none;
+    }
+    
+    ul li {
+        margin-bottom: 10px;
+    }
+    ul li i {
+        margin-right: 5px;
+    }
+    
+
+</style>
+
+
+
+
+  
+<!-- Service Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <!-- First Row with Image and Text -->
+        <div class="row g-5 mb-5">
+            <div class="col-lg-5 wow zoomIn" data-wow-delay="0.3s" style="min-height: 400px;">
+                <div class="position-relative h-100 rounded overflow-hidden">
+                    <img class="position-absolute w-100 h-100" src="{% static 'img/souvenir.jpg' %}" style="object-fit: cover;" alt="Service Image"/>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="section-title mb-5">
+                    <h5 class="position-relative d-inline-block text-primary text-uppercase">Our Services</h5>
+                    <h1 class="display-5 mb-0">Providing Premier Healthcare Consultancy Services Across the UAE</h1>
+                </div>
+                <!-- Two Columns of Services -->
+                <div class="row g-5">
+                    <div class="col-md-6 service-item wow zoomIn" data-wow-delay="0.6s">
+                        <div class="rounded overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/Najat-Trifold-Brochure-1024x791.png' %}" alt="Service 1" style="width: 100%;"/>
+                        </div>
+                        <div class="bg-light p-2 rounded-bottom position-relative">
+                            <h4 class="text-center">Administrative Services</h4>
+                            <hr class="text-primary w-50 mx-auto mt-0"/>
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-check text-primary"></i> Sponsorship</li>
+                                <li><i class="fa fa-check text-primary"></i> PRO Services</li>
+                                <li><i class="fa fa-check text-primary"></i> Process Trade Name to License</li>
+                                <li><i class="fa fa-check text-primary"></i> Professional licensing (DOH/DHA/MOH)</li>
+                                <li><i class="fa fa-check text-primary"></i> Notary Public</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 service-item wow zoomIn" data-wow-delay="0.9s">
+                        <div class="rounded overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/Najat-Trifold-Brochure-1-1024x791.png' %}" alt="Service 2" style="width: 100%;"/>
+                        </div>
+                        <div class="bg-light p-2 rounded-bottom position-relative">
+                            <h4 class="text-center">Legal and Compliance Services</h4>
+                            <hr class="text-primary w-50 mx-auto mt-0"/>
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-check text-primary"></i> Arranging Audits (DOH/DHA/MOH)</li>
+                                <li><i class="fa fa-check text-primary"></i> Accounting and VAT services</li>
+                                <li><i class="fa fa-check text-primary"></i> Process Insurances (DAMAN, NEXTCARE, AXA)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row with Four Columns -->
+        <div class="row g-5">
+            <div class="col-md-3 service-item wow zoomIn" data-wow-delay="0.3s">
+                <div class="rounded overflow-hidden">
+                    <img class="img-fluid" src="{% static 'img/Najat-Trifold-Brochure-2-1024x791.png' %}" alt="Service 3"/>
+                </div>
+                <div class="bg-light p-2 rounded-bottom position-relative">
+                    <h4 class="text-center">Engineering and Construction Services</h4>
+                    <hr class="text-primary w-50 mx-auto mt-0"/>
+
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-check text-primary"></i> Arranging the Engineering Plan</li>
+                        <li><i class="fa fa-check text-primary"></i> Construction & Interior Design</li>
+                    </ul>
+                    <br>
+                    <br>
+                    <br>
+
+
+                </div>
+            </div>
+
+            <div class="col-md-3 service-item wow zoomIn" data-wow-delay="0.6s">
+                <div class="rounded overflow-hidden">
+                    <img class="img-fluid" src="{% static 'img/Najat-Trifold-Brochure-3-1024x791.png' %}" alt="Service 4"  style="width: 100%;"/>
+                </div>
+                <div class="bg-light p-2 rounded-bottom position-relative">
+                    <h4 class="text-center">Healthcare Services</h4>
+                    <hr class="text-primary w-50 mx-auto mt-0"/>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-check text-primary"></i> Facility Licensing (DOH/DHA/MOH)</li>
+                        <li><i class="fa fa-check text-primary"></i> Biomedical Consultant & Services</li>
+                        <li><i class="fa fa-check text-primary"></i> Pharmacy & Ambulance Services</li>
+                        <li><i class="fa fa-check text-primary"></i> Clinic Profit Sharing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3 service-item wow zoomIn" data-wow-delay="0.6s">
+                <div class="rounded overflow-hidden">
+                    <img class="img-fluid" src="{% static 'img/Najat-Trifold-Brochure-4-1024x791.png' %}" alt="Service 5"  style="width: 100%;"/>
+                </div>
+                <div class="bg-light p-2 rounded-bottom position-relative">
+                    <h4 class="text-center">Human Resources & Support Services</h4>
+                    <hr class="text-primary w-50 mx-auto mt-0"/>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-check text-primary"></i> Outsourcing Staff</li>
+                        <li><i class="fa fa-check text-primary"></i> Maintenance & Cleaning Services</li>
+                        <li><i class="fa fa-check text-primary"></i> Home Care Services</li>
+                    <br>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3 service-item wow zoomIn" data-wow-delay="0.6s">
+                <div class="rounded overflow-hidden">
+                    <img class="img-fluid" src="{% static 'img/Najat-Trifold-Brochure-6-1024x791.png' %}" alt="Service 6"  style="width: 100%;"/>
+                </div>
+                <div class="bg-light p-2 rounded-bottom position-relative">
+                    <h4 class="text-center">Technical Services</h4>
+                    <hr class="text-primary w-50 mx-auto mt-0"/>
+                    <br>
+
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-check text-primary"></i> Coding Services</li>
+                    </ul>
+                    <br>
+                    <br>
+                    <br>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+  <br />
+  <br />
+  <br />
+{% endblock %}

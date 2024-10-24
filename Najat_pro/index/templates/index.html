@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block heading %}
+<!-- Carousel Start -->
+<div class="container-fluid p-0">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100" src="{% static 'img/healthcare.webp' %}" alt="Image" style="max-height: 800px ; min-height: 400px;">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h5 class="text-white text-uppercase mb-3 animated slideInDown">Trusted Healthcare
+                            Consultants</h5>
+                        <h1 class="text-white mb-md-4 animated zoomIn">Transforming Healthcare Excellence
+                            Together</h1>
+                        <a href="{% url 'contact' %}" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="w-100" src="{% static 'img/carousel-2.jpg' %}" alt="Image" style="max-height: 800px ; min-height: 400px;">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h5 class="text-white text-uppercase mb-3 animated slideInDown">Trusted Healthcare
+                            Consultants</h5>
+                        <h1 class="text-white mb-md-4 animated zoomIn">with the Best Healthcare Management
+                            in UAE</h1>
+                        <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<!-- Carousel End -->
+
+{% endblock heading %}
+
+{% block content %}
+
+<style>
+    
+
+
+/* Move the Previous button to the left */
+.owl-prev {
+    left: 0px; /* Adjust this value to control the distance from the carousel */
+}
+
+/* Move the Next button to the right */
+.owl-next {
+    right: -70px; /* Adjust this value to control the distance from the carousel */
+}
+
+</style>
+
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="position-relative d-inline-block text-primary text-uppercase">About Us</h5>
+                        <h1 class="mb-0">Healthcare Management in UAE</h1>
+                    </div>
+                    <p class="mb-4">Najat Management LLC is dedicated to offering comprehensive solutions for healthcare
+                        facilities. With years of experience, we ensure your medical center, clinic, or other healthcare
+                        service is set up and managed with excellence.</p>
+                    <a href="{% url 'about' %}" class="btn btn-primary py-md-3 px-md-5">Learn More</a>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-fluid rounded" src="{% static 'img/slide1(1).jpg' %}" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- About End -->
+
+<!-- Service Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="section-title mb-5">
+            <h5 class="position-relative d-inline-block text-primary text-uppercase">Quality Healthcare Services</h5>
+            <h1 class="display-5 mb-0">Our Range of Innovative Services</h1>
+        </div>
+        <p class="mb-4">Our Services cater complete set up specially in the Medical Field if you wish to put up your own Medical Facility like a Medical Center, Clinic, Rehabilitation Centre, Optical Shop, Home Care, Tele medicine, and Mobile Clinic</p>
+    </div>
+    <br>
+    <br>
+
+
+
+    <div class="container">
+        
+        
+
+            <div class="row g-5 owl-carousel price-carousel wow zoomIn ">
+                <div class=" service-item wow zoomIn price-item pb-4" data-wow-delay="0.6s">
+                    <div class="rounded overflow-hidden position-relative">
+                        <img class="img-fluid" src="{% static 'img/Najat-Trifold-Brochure-1024x791.png' %}" alt="Service 1" style="width: 100%;"/>
+                    </div>
+                    <div class="bg-light p-2 rounded-bottom position-relative">
+                        <h4 class="text-center">Administrative Services</h4>
+                        <hr class="text-primary w-50 mx-auto mt-0"/>
+                    </div>
+                </div>
+
+                <div class="service-item wow zoomIn price-item pb-4" data-wow-delay="0.9s">
+                    <div class="rounded overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/Najat-Trifold-Brochure-1-1024x791.png' %}" alt="Service 2" style="width: 100%;"/>
+                    </div>
+                    <div class="bg-light p-2 rounded-bottom position-relative">
+                        <h4 class="text-center">Legal and Compliance Services</h4>
+                        <hr class="text-primary w-50 mx-auto mt-0"/>
+                        {% comment %} <ul class="list-unstyled">
+                            <li><i class="fa fa-check text-primary"></i> Arranging Audits (DOH/DHA/MOH)</li>
+                            <li><i class="fa fa-check text-primary"></i> Accounting and VAT services</li>
+                            <li><i class="fa fa-check text-primary"></i> Process Insurances (DAMAN, NEXTCARE, AXA)</li>
+                        </ul> {% endcomment %}
+                        
+
+                    </div>
+                </div>
+
+
+                <div class=" service-item wow zoomIn price-item pb-4" data-wow-delay="0.3s">
+                    <div class="rounded overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/Najat-Trifold-Brochure-2-1024x791.png' %}" alt="Service 3"/>
+                    </div>
+                    <div class="bg-light p-2 rounded-bottom position-relative">
+                        <h4 class="text-center">Engineering and Construction Services</h4>
+                        <hr class="text-primary w-50 mx-auto mt-0"/>
+                        {% comment %} <ul class="list-unstyled">
+                            <li><i class="fa fa-check text-primary"></i> Arranging the Engineering Plan</li>
+                            <li><i class="fa fa-check text-primary"></i> Construction & Interior Design</li>
+                        </ul> {% endcomment %}
+                        
+
+                    </div>
+                </div>
+
+                <div class=" service-item wow zoomIn price-item pb-4" data-wow-delay="0.6s">
+                    <div class="rounded overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/Najat-Trifold-Brochure-3-1024x791.png' %}" alt="Service 4"  style="width: 100%;"/>
+                    </div>
+                     <div class="bg-light p-2 rounded-bottom position-relative">
+                        <h4 class="text-center">Healthcare Services</h4>
+                        <hr class="text-primary w-50 mx-auto mt-0"/>
+                        {% comment %}<ul class="list-unstyled">
+                            <li><i class="fa fa-check text-primary"></i> Facility Licensing (DOH/DHA/MOH)</li>
+                            <li><i class="fa fa-check text-primary"></i> Biomedical Consultant & Services</li>
+                            <li><i class="fa fa-check text-primary"></i> Pharmacy & Ambulance Services</li>
+                            <li><i class="fa fa-check text-primary"></i> Clinic Profit Sharing</li>
+                        </ul>{% endcomment %}
+                    </div> 
+                </div>
+
+                <div class=" service-item wow zoomIn price-item pb-4" data-wow-delay="0.6s">
+                    <div class="rounded overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/Najat-Trifold-Brochure-4-1024x791.png' %}" alt="Service 5"  style="width: 100%;"/>
+                    </div>
+                     <div class="bg-light p-2 rounded-bottom position-relative">
+                        <h4 class="text-center">Human Resources & Support Services</h4>
+                        <hr class="text-primary w-50 mx-auto mt-0"/>
+                        {% comment %} <ul class="list-unstyled">
+                            <li><i class="fa fa-check text-primary"></i> Outsourcing Staff</li>
+                            <li><i class="fa fa-check text-primary"></i> Maintenance & Cleaning Services</li>
+                            <li><i class="fa fa-check text-primary"></i> Home Care Services</li>
+                        </ul> {% endcomment %}
+                    </div> 
+                </div>
+
+                <div class="service-item wow zoomIn price-item pb-4" data-wow-delay="0.6s">
+                    <div class="rounded overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/Najat-Trifold-Brochure-6-1024x791.png' %}" alt="Service 6"  style="width: 100%;"/>
+                    </div>
+                    <div class="bg-light p-2 rounded-bottom position-relative">
+                        <h4 class="text-center">Technical Services</h4>
+                        <hr class="text-primary w-50 mx-auto mt-0"/>
+                        
+
+                        {% comment %} <ul class="list-unstyled">
+                            <li><i class="fa fa-check text-primary"></i> Coding Services</li>
+                        </ul> {% endcomment %}
+                       
+
+                    </div>
+                </div>
+            </div>
+            
+    </div>
+    <div class="container text-center" >
+        <a href="{% url 'service' %}" class="btn btn-primary py-md-3 px-md-5 ">For more details…
+        </a>
+    </div>
+    
+</div>
+<br>
+<br>
+<!-- Service End -->
+{% endblock content %}

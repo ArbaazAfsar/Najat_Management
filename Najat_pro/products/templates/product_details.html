@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block active %}
+<div class="navbar-nav ms-auto py-0">
+    <a href="{% url 'home' %}" class="nav-item nav-link ">Home</a>
+    <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+    <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
+    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+    <div class="nav-item dropdown active">
+      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+{% endblock %}
+
+
+
+{% block heading %}
+
+<div class="container-fluid py-5 hero-header mb-5" style="position: relative; background-image: url('{% static 'img/medical_and_healthcare.webp' %}'); background-size: cover; background-position: center;">
+    <!-- Indian Navy Blue overlay -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(39, 51, 119, 0.7); z-index: 1;"></div>
+
+    <div class="row py-3" style="position: relative; z-index: 2;">
+        <div class="col-12 text-center">
+            <h1 class="display-3 text-white animated zoomIn">Product Categories</h1>
+            <h2 class="text-white">Explore Our Healthcare Categories</h2>
+            
+            <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="" class="h5 text-white">Categories</a>
+
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+
+{% endblock heading %}
+
+
+
+
+{% block content %}
+  <style>
+    /* Move the Previous button to the left */
+    .owl-prev {
+      left: 0px; /* Adjust this value to control the distance from the carousel */
+    }
+    
+    /* Move the Next button to the right */
+    .owl-next {
+      right: -70px; /* Adjust this value to control the distance from the carousel */
+    }
+  </style>
+
+  <!-- Service Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+      <div class="section-title mb-5">
+        <h5 class="position-relative d-inline-block text-primary text-uppercase">Product Overview</h5>
+        <h1 class="display-5 mb-0">{{ product.name }}</h1><strong>Model Number:</strong> {{ product.model_number }}
+        
+      </div>
+    </div>
+    <br />
+    <br />
+
+    <div class="container">
+        <p>
+            
+          </p>
+      <div class="row g-5 owl-carousel price-carousel wow zoomIn">
+        {% for image in product.images.all %}
+          <div class="service-item wow zoomIn price-item pb-4" data-wow-delay="0.6s">
+            <div class="rounded overflow-hidden position-relative">
+              <img class="img-fluid" src="{{ image.image.url }}" alt="{{ image.alt_text }}" style="width: 100%;" />
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+
+    <br />
+    <br />
+    <br />
+
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-12">
+                <div class="p-2">
+                    <h4 class="text-center">Description</h4>
+                    <hr class="text-primary  mx-auto mt-0" />
+                    <br />
+
+                    <p class="mb-4">Our Services cater complete set up specially in the Medical Field if you wish to put up your own Medical Facility like a Medical Center, Clinic, Rehabilitation Centre, Optical Shop, Home Care, Tele medicine, and Mobile Clinic</p>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6">
+                <div class="p-2">
+                    <h4 class="text-center">Specifications</h4>
+                    <hr class="text-primary mx-auto mt-0" />
+                    <br />
+                    <ul class="list-unstyled" style="margin-left: 20%; margin-right: 20%;"> <!-- 20% margin on both sides -->
+                        {% for spec in product.specifications.splitlines %} <!-- Split by new line -->
+                            <li class="text-left"> <!-- Ensure all items start from the left -->
+                                <i class="bi bi-arrow-right text-primary me-2"></i> {{ spec }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="p-2">
+                    <h4 class="text-center">Brochure</h4>
+                    <hr class="text-primary" />
+                    <br />
+                    {% if product.brochure %}
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://www.wiggens.com/statics/vipbuy/images/pdf.png" class="vm" style="width: 40px; margin-right: 10px;" alt="PDF Icon">
+                            <p class="mb-0">
+                                <a href="{{ product.brochure.url }}" class="text-primary text-decoration-none" target="_blank">
+                                    Download Product Brochure
+                                </a>
+                            </p>
+                        </div>
+                    {% else %}
+                        <p class="text-center">No brochure available for this product.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <a href="{% url 'all_products' %}">Back to all products</a>
+  </div>
+  <br />
+  <br />
+
+ 
+  <!-- Service End -->
+
+{% endblock %}
