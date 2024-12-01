@@ -16,7 +16,7 @@ def upload_product(request):
         product_form = ProductForm(request.POST, request.FILES)
         
         # Use a formset for handling multiple product images
-        ImageFormSet = modelformset_factory(ProductImage, form=ProductImageForm, extra=5)
+        ImageFormSet = modelformset_factory(ProductImage, form=ProductImageForm,)# extra=5)
         image_formset = ImageFormSet(request.POST, request.FILES, queryset=ProductImage.objects.none())
         
         if product_form.is_valid() and image_formset.is_valid():

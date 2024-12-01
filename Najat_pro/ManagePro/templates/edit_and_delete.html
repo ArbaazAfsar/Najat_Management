@@ -7,8 +7,26 @@
     <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
     <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
     <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
-    <div class="nav-item dropdown active">
-      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Products</a>
+        
+        <div class="dropdown-menu m-0">
+          <a href="{% url 'all_products' %}" class="dropdown-item">All products</a>
+          <a href="{% url 'categories' %}" class="dropdown-item">Categories</a>
+        </div>
+      </div>
+        {% if user.is_staff %}
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Management</a>
+              <div class="dropdown-menu m-0">
+              <a href="{% url 'upload_product' %}" class="dropdown-item">Upload Product</a>
+              <a href="{% url 'upload_category' %}" class="dropdown-item">Upload Category</a>
+              <a href="{% url 'edit_and_delete' %}" class="dropdown-item">Edit & delete</a>
+              </div>
+        </div>
+          
+          {% endif %}
+    </div>
 {% endblock active %}
 
 
@@ -72,7 +90,7 @@
                                 <hr class="text-primary w-50 mx-auto mt-0"/>
                                 <div class="text-center">
                                     <a href="{% url 'edit_category' category.id %}" class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="{% url 'delete_category' category.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this category?');">Delete</a>
+                                    <a href="{% url 'delete_category' category.id %}" class="btn btn-danger btn-sm">Delete</a>
                                 </div>
                             </div>
 

@@ -102,7 +102,7 @@
             <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
             <div class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
-              {% endblock %}
+              
               <div class="dropdown-menu m-0">
                 <a href="{% url 'all_products' %}" class="dropdown-item">All products</a>
                 <a href="{% url 'categories' %}" class="dropdown-item">Categories</a>
@@ -120,6 +120,7 @@
                 
                 {% endif %}
           </div>
+        {% endblock %}
         
         <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
       </div>

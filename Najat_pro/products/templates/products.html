@@ -8,8 +8,25 @@
     <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
     <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
     <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
-    <div class="nav-item dropdown  active">
-      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+    <div class="nav-item dropdown  ">
+      <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Products</a>
+      <div class="dropdown-menu m-0">
+        <a href="{% url 'all_products' %}" class="dropdown-item">All products</a>
+        <a href="{% url 'categories' %}" class="dropdown-item">Categories</a>
+      </div>
+    </div>
+      {% if user.is_staff %}
+      <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Management</a>
+            <div class="dropdown-menu m-0">
+            <a href="{% url 'upload_product' %}" class="dropdown-item">Upload Product</a>
+            <a href="{% url 'upload_category' %}" class="dropdown-item">Upload Category</a>
+            <a href="{% url 'edit_and_delete' %}" class="dropdown-item">Edit & delete</a>
+            </div>
+      </div>
+        
+        {% endif %}
+  </div>
 {% endblock active %}
 
 
@@ -86,37 +103,6 @@
         </div>
     </div>
 </div>
-<br>
-<br>
-<br>
-
-
-
-
-
-
-<div class="container mt-4">
-    
-    <h1 class="mb-4">Products in {{ category.name }}</h1>
-    <ul class="list-unstyled">
-        {% for product in products %}
-            <li class="media product-item">
-                {% if product.images.all %}
-                    <img src="{{ product.images.all.0.image.url }}" alt="{{ product.name }}" class="product-image">
-                {% else %}
-                    <img src="{% static 'default_image.png' %}" alt="Default Image" class="product-image"> <!-- Optional default image -->
-                {% endif %}
-                <div class="media-body">
-                    <h5 class="mt-0 mb-1">
-                        <a href="{% url 'product_details' product.id %}" class="text-decoration-none">{{ product.name }}</a>
-                    </h5>
-                    <p>{{ product.description|truncatewords:15 }}</p> <!-- Optional description -->
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
-</div>
-<br>
 <br>
 <br>
 <br>
